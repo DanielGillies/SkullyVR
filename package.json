@@ -1,0 +1,14 @@
+{
+  "name": "skullyvr",
+  "version": "1.0.0",
+  "description": "SKULLY 360 degree VR experience",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Gillies",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.8.5"
+  }
+}
