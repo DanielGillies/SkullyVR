@@ -1,0 +1,15 @@
+#canvas1 {
+    position: absolute;
+    z-index: 100;
+    right: 10%;
+    bottom: 20%;
+    opacity: .6;
+}
+
+#copy {
+    position: absolute;
+    z-index: 100;
+    right: 60%;
+    bottom: 20%;
+    opacity: .6;
+}
