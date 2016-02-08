@@ -14,7 +14,7 @@
     <script src="js/DeviceOrientationController.js"></script>
     <script src="js/StereoEffect.js"></script>
     <video id="video" loop style="display:none">
-        <source src="flying.mp4" type="video/mp4">
+        <source src="360_1.mp4" type="video/mp4">
     </video>
     <canvas id="copy"></canvas>
     <script>
@@ -29,24 +29,24 @@
 
     var controlsEnabled = true;
 
-    if (annyang) {
-        var commands = {
-            "start video" : function() {
-                inited = true;
-                init();
-                animate();
-            },
-            "say *tag" : clog
-        };
+    // if (annyang) {
+    //     var commands = {
+    //         "start video" : function() {
+    //             inited = true;
+    //             init();
+    //             animate();
+    //         },
+    //         "say *tag" : clog
+    //     };
 
-        var clog = function(tag) {
-            console.log("YOU SAID: " + tag);
-        }
+    //     var clog = function(tag) {
+    //         console.log("YOU SAID: " + tag);
+    //     }
 
-        annyang.addCommands(commands);
+    //     annyang.addCommands(commands);
 
-        annyang.start();
-    }
+    //     annyang.start();
+    // }
 
     document.addEventListener("touchstart", function() {
         if (!inited) {
