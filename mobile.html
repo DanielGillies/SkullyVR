@@ -16,7 +16,6 @@
     <video id="video" muted preload loop style="display:none">
         <source src="360_1.mp4" type="video/mp4">
     </video>
-    <canvas id="copy"></canvas>
     <div class="banner" id="b1">
         <p>60 MPH</p>
     </div>
@@ -92,7 +91,7 @@
 
         for (var j = 0; j < canvases.length; j++) {
             if (canvases[j].id === "")
-                canvases[j].setAttribute("id", "canvas" + (j - 1));
+                canvases[j].setAttribute("id", "canvas" + (j));
         }
 
         fullscreen();
@@ -118,16 +117,6 @@
         skyBox.scale.set(-1, 1, 1);
         skyBox.rotation.y = -Math.PI/2;
         scene.add(skyBox);
-
-        canv = document.getElementById("canvas1");
-        destCanv = document.getElementById("copy");
-
-        destCanv.width = canv.width;
-        destCanv.height = canv.height;
-
-        destCanv.style.cssText = canv.style.cssText;
-
-        ctx = destCanv.getContext("2d");
 
         window.addEventListener('resize', onWindowResize, false);
 

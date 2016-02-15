@@ -1,6 +1,7 @@
 p {
     margin: 0;
 }
+
 #canvas1 {
     position: absolute;
     z-index: 100;
