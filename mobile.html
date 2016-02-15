@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>SKULLY Mobile Experience</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/vr.css">
+    <link rel="stylesheet" type="text/css" href="css/mobile.css">
 </head>
 
 <body>
@@ -95,7 +95,7 @@
                 canvases[j].setAttribute("id", "canvas" + (j - 1));
         }
 
-        // fullscreen();
+        fullscreen();
 
         controls = new DeviceOrientationController(camera, renderer.domElement);
         controls2 = new DeviceOrientationController(camera2, renderer2.domElement);
