@@ -9,14 +9,6 @@ p {
     opacity: .6;
 }
 
-#copy {
-    position: absolute;
-    z-index: 100;
-    right: 60%;
-    bottom: 20%;
-    opacity: .6;
-}
-
 .banner {
     position: absolute;
     height: 20px;
@@ -29,8 +21,4 @@ p {
 
 #b1 {
     right: 10%;
-}
-
-#b2 {
-    right: 60%;
 }
