@@ -26,6 +26,14 @@
         <div id="myBar">PROGRESS BAR</div>
     </div>
     <script>
+    document.addEventListener("click", function() {
+        if (!inited) {
+            inited = true;
+            console.log("CLICKED")
+            video.play();
+        }
+    }, false)
+
     // Create video in background and start playing
     var video = document.createElement('video');
     video.src = 'http://vr.skully.com/flying.mp4';
@@ -41,7 +49,8 @@
         var loadedPercentage = this.buffered.end(0) / this.duration;
         // console.log(loadedPercentage);
         var elem = document.getElementById("myBar");
-        elem.style.width = loadedPercentage*100 + "%";
+        elem.style.width = loadedPercentage * 100 + "%";
+        elem.innerHTML = Math.round(loadedPercentage * 100) + "%";
         if (loadedPercentage == 1) {
             document.body.appendChild(video);
             video.play();
