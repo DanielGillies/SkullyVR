@@ -23,36 +23,6 @@
         <source type="video/mp4">
     </video>
     <script>
-    console.log("Downloading video...hellip;Please wait...")
-    var elem = document.getElementById("myBar");
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', '360_1.mp4', true);
-    xhr.responseType = 'blob';
-    xhr.onload = function(e) {
-        if (this.status == 200) {
-            console.log("got it");
-            var myBlob = this.response;
-            var vid = (window.webkitURL ? webkitURL : URL).createObjectURL(myBlob);
-            // myBlob is now the blob that the object URL pointed to.
-            var video = document.getElementById("video");
-            console.log("Loading video into element");
-            video.src = vid;
-            // video.style.display = "block";
-            // not needed if autoplay is set for the video element
-            // video.play()
-            init();
-            animate();
-        }
-    }
-    xhr.onprogress = function(e) {
-        if (e.lengthComputable) {
-            var loadedPercentage = e.loaded / e.total;
-            elem.style.width = loadedPercentage * 100 + "%";
-            elem.innerHTML = Math.round(loadedPercentage * 100) + "%";
-        }
-    }
-
-    xhr.send();
     var camera, camera2, scene, renderer, renderer2
     var geometry, material, mesh, texture, skybox;
     var controls, controls2;

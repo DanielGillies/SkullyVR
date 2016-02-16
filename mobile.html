@@ -19,6 +19,15 @@
     <div class="banner" id="b1">
         <p>60 MPH</p>
     </div>
+    <div class="progress-bar">
+        <div id="positive" class="bar positive">
+            <span>0%</span>
+        </div>
+        <div id="negative"class="bar negative">
+            <span>0%</span>
+        </div>
+    </div>
+    <script src="js/getVid.js"></script>
     <script>
     var camera, camera2, scene, renderer, renderer2;
     var geometry, material, mesh, texture, skybox;
@@ -26,46 +35,25 @@
 
     var loader = new THREE.TextureLoader();
 
-    var inited = false;
-
     var controlsEnabled = true;
 
-    // if (annyang) {
-    //     var commands = {
-    //         "start video" : function() {
-    //             inited = true;
-    //             init();
-    //             animate();
-    //         },
-    //         "say *tag" : clog
-    //     };
-
-    //     var clog = function(tag) {
-    //         console.log("YOU SAID: " + tag);
+    // document.addEventListener("touchstart", function() {
+    //     if (!inited) {
+    //         inited = true;
+    //         console.log("TOUCHED")
+    //         init();
+    //         animate();
     //     }
+    // })
 
-    //     annyang.addCommands(commands);
-
-    //     annyang.start();
-    // }
-
-    document.addEventListener("touchstart", function() {
-        if (!inited) {
-            inited = true;
-            console.log("TOUCHED")
-            init();
-            animate();
-        }
-    })
-
-    document.addEventListener("click", function() {
-        if (!inited) {
-            inited = true;
-            console.log("CLICKED")
-            init();
-            animate();
-        }
-    }, false)
+    // document.addEventListener("click", function() {
+    //     if (!inited) {
+    //         inited = true;
+    //         console.log("CLICKED")
+    //         init();
+    //         animate();
+    //     }
+    // }, false)
 
     function init() {
 
@@ -115,7 +103,7 @@
 
         skyBox = new THREE.Mesh(geometry, material);
         skyBox.scale.set(-1, 1, 1);
-        skyBox.rotation.y = -Math.PI/2;
+        skyBox.rotation.y = -Math.PI / 2;
         scene.add(skyBox);
 
         window.addEventListener('resize', onWindowResize, false);
