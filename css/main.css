@@ -47,7 +47,7 @@ h1 {
 }
 
 .progress-bar .bar.positive {
-    background: #fff;
+    background: #d52424;
     left: 0;
     width: 0%;
     -webkit-animation: animate-positive 4s;
@@ -56,11 +56,11 @@ h1 {
 
 .progress-bar .bar.positive span {
     left: 0;
-    color: #333;
+    color: #000;
 }
 
 .progress-bar .bar.negative {
-    background: #07A4DD;
+    background: #000;
     right: 0;
     width: 0%;
     -webkit-animation: animate-negative 4s;
@@ -69,7 +69,7 @@ h1 {
 
 .progress-bar .bar.negative span {
     right: 0;
-    color: #fff;
+    color: #d52424;
 }
 
 @-webkit-keyframes animate-positive {
