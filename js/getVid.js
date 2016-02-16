@@ -25,7 +25,7 @@ xhr.onprogress = function(e) {
     if (e.lengthComputable) {
         var loadedPercentage = e.loaded / e.total;
         elem1.style.width = loadedPercentage * 100 + "%";
-        elem2.style.width = loadedPercentage * 100 + "%";
+        elem2.style.width = 100 - (loadedPercentage * 100) + "%";
         elem1.innerHTML = Math.round(loadedPercentage * 100) + "%";
         elem2.innerHTML = Math.round(loadedPercentage * 100) + "%";
     }
