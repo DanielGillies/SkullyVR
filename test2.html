@@ -21,6 +21,10 @@
         position: absolute;
         background-color: green;
     }
+
+    #video {
+        display: none;
+    }
     </style>
     <div id="myProgress">
         <div id="myBar"></div>
@@ -40,6 +44,7 @@
             var video = document.getElementById("video");
             console.log("Loading video into element");
             video.src = vid;
+            video.style.display = "block";
             // not needed if autoplay is set for the video element
             // video.play()
         }
@@ -54,7 +59,7 @@
 
     xhr.send();
     </script>
-    <video id="video" muted controls autoplay></video>
+    <video id="video" muted autoplay></video>
 </body>
 
 </html>

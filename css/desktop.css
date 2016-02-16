@@ -46,3 +46,17 @@ body {
     z-index: 2;
     opacity: .8;
 }
+
+#myProgress {
+    width: 100%;
+    height: 30px;
+    position: relative;
+    background-color: grey;
+}
+
+#myBar {
+    width: 10px;
+    height: 30px;
+    position: absolute;
+    background-color: green;
+}
