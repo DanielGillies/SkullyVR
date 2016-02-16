@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Preload video via AJAX</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <style>
+    #myProgress {
+        width: 100%;
+        height: 30px;
+        position: relative;
+        background-color: grey;
+    }
+    
+    #myBar {
+        width: 10px;
+        height: 30px;
+        position: absolute;
+        background-color: green;
+    }
+    </style>
+    <div id="myProgress">
+        <div id="myBar"></div>
+    </div>
+    <script>
+    console.log("Downloading video...hellip;Please wait...")
+    var elem = document.getElementById("myBar");
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'flying.mp4', true);
+    xhr.responseType = 'blob';
+    xhr.onload = function(e) {
+        if (this.status == 200) {
+            console.log("got it");
+            var myBlob = this.response;
+            var vid = (window.webkitURL ? webkitURL : URL).createObjectURL(myBlob);
+            // myBlob is now the blob that the object URL pointed to.
+            var video = document.getElementById("video");
+            console.log("Loading video into element");
+            video.src = vid;
+            // not needed if autoplay is set for the video element
+            // video.play()
+        }
+    }
+    xhr.onprogress = function(e) {
+        if (e.lengthComputable) {
+            var loadedPercentage = e.loaded/e.total;
+            elem.style.width = loadedPercentage * 100 + "%";
+            elem.innerHTML = Math.round(loadedPercentage * 100) + "%";
+        }
+    }
+
+    xhr.send();
+    </script>
+    <video id="video" muted controls autoplay></video>
+</body>
+
+</html>
