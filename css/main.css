@@ -15,16 +15,33 @@ h1 {
     margin: 50px 0 0;
 }
 
+#prompt {
+    display: none;
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    top: 100px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    color: white;
+}
+
 .progress-bar {
-    text-align: center;
-    position: relative;
+    position: absolute;
     border: #ccc solid 1px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
     width: 400px;
     height: 40px;
     line-height: 40px;
     vertical-align: middle;
     overflow: hidden;
-    margin: 100px auto 50px;
+    // margin: 50% auto 50%;
     font-family: arial, sans-serif;
     font-weight: bold;
     font-size: 30px;

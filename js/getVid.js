@@ -14,7 +14,9 @@ xhr.onload = function(e) {
         video.src = vid;
         // not needed if autoplay is set for the video element
         // video.play()
+        document.getElementById("prompt").style.display = "block";
         document.addEventListener("click", function() {
+            document.getElementById("preloadBlocker").style.display = "none";
             init();
             animate();
             document.removeEventListener("click", arguments.callee, false);
