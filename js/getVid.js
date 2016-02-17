@@ -1,7 +1,7 @@
 var elem1 = document.getElementById("positive");
 var elem2 = document.getElementById("negative");
 var xhr = new XMLHttpRequest();
-xhr.open('GET', '360_2.mp4', true);
+xhr.open('GET', '360_1.mp4', true);
 xhr.responseType = 'blob';
 xhr.onload = function(e) {
     if (this.status == 200) {
