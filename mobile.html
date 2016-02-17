@@ -13,6 +13,7 @@
     <script src="js/three.min.js"></script>
     <script src="js/DeviceOrientationController.js"></script>
     <script src="js/StereoEffect.js"></script>
+    <script src="js/config.js"></script>
     <video id="video" muted preload loop style="display:none">
         <source type="video/mp4">
     </video>
@@ -74,7 +75,7 @@
 
         renderer2 = new THREE.WebGLRenderer();
         renderer2.setPixelRatio(window.devicePixelRatio);
-        renderer2.setSize(120, 70);
+        renderer2.setSize(160, 90);
         document.body.appendChild(renderer2.domElement);
 
 

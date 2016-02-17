@@ -1,7 +1,7 @@
 var elem1 = document.getElementById("positive");
 var elem2 = document.getElementById("negative");
 var xhr = new XMLHttpRequest();
-xhr.open('GET', '360_1.mp4', true);
+xhr.open('GET', config.video, true);
 xhr.responseType = 'blob';
 xhr.onload = function(e) {
     if (this.status == 200) {
@@ -14,7 +14,7 @@ xhr.onload = function(e) {
         video.src = vid;
         // not needed if autoplay is set for the video element
         // video.play()
-        document.getElementById("prompt").style.display = "block";
+        document.getElementById("prompt").style.display = "inline";
         document.addEventListener("click", function() {
             document.getElementById("preloadBlocker").style.display = "none";
             document.getElementById("prompt").style.display = "none";
