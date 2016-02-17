@@ -17,6 +17,8 @@ xhr.onload = function(e) {
         document.getElementById("prompt").style.display = "block";
         document.addEventListener("click", function() {
             document.getElementById("preloadBlocker").style.display = "none";
+            document.getElementById("prompt").style.display = "none";
+
             init();
             animate();
             document.removeEventListener("click", arguments.callee, false);

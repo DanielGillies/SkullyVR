@@ -14,15 +14,27 @@
     <script src="js/DeviceOrientationController.js"></script>
     <script src="js/StereoEffect.js"></script>
     <video id="video" muted preload loop style="display:none">
-        <source src="360_1.mp4" type="video/mp4">
+        <source type="video/mp4">
     </video>
     <canvas id="copy"></canvas>
-    <div class="banner" id="b1">
+    <div id="preloadBlocker">
+        <div class="progress-bar">
+            <div id="positive" class="bar positive">
+                <span>0%</span>
+            </div>
+            <div id="negative" class="bar negative">
+                <span>0%</span>
+            </div>
+        </div>
+    </div>
+    <h2 id="prompt">Tap to Begin</h2>
+    <!--  <div class="banner" id="b1">
         <p>60 MPH</p>
     </div>
     <div class="banner" id="b2">
         <p>60 MPH</p>
-    </div>
+    </div> -->
+    <script src="js/getVid.js"></script>
     <script>
     var camera, camera2, scene, renderer, renderer2, effect;
     var geometry, material, mesh, texture, skybox;
@@ -54,23 +66,23 @@
     //     annyang.start();
     // }
 
-    document.addEventListener("touchstart", function() {
-        if (!inited) {
-            inited = true;
-            console.log("TOUCHED")
-            init();
-            animate();
-        }
-    })
+    // document.addEventListener("touchstart", function() {
+    //     if (!inited) {
+    //         inited = true;
+    //         console.log("TOUCHED")
+    //         init();
+    //         animate();
+    //     }
+    // })
 
-    document.addEventListener("click", function() {
-        if (!inited) {
-            inited = true;
-            console.log("CLICKED")
-            init();
-            animate();
-        }
-    }, false)
+    // document.addEventListener("click", function() {
+    //     if (!inited) {
+    //         inited = true;
+    //         console.log("CLICKED")
+    //         init();
+    //         animate();
+    //     }
+    // }, false)
 
     function init() {
 
@@ -123,7 +135,7 @@
 
         skyBox = new THREE.Mesh(geometry, material);
         skyBox.scale.set(-1, 1, 1);
-        skyBox.rotation.y = -Math.PI/2;
+        skyBox.rotation.y = -Math.PI / 2;
         scene.add(skyBox);
 
         canv = document.getElementById("canvas1");
