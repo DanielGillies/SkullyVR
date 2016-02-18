@@ -1,5 +1,6 @@
 var elem1 = document.getElementById("positive");
 var elem2 = document.getElementById("negative");
+var speedElem = document.getElementById("speed");
 var xhr = new XMLHttpRequest();
 xhr.open('GET', config.video, true);
 xhr.responseType = 'blob';
@@ -39,35 +40,29 @@ xhr.send();
 
 function changeValue(value, duration, startTime) {
     console.log("called changeValue")
-    var startSpeed = parseInt(document.getElementById("speed").innerHTML);
     var intervals = duration * 2 / 1000;
     var valOverTime = value / intervals;
     var intervalTime = duration / intervals;
 
     setTimeout(function() {
-        change(intervals, intervalTime, valOverTime, startSpeed, 1)
+        change(intervals, intervalTime, valOverTime, 1)
     }, startTime);
 
-    // console.log(valOverTime + " : : : : " + intervals + " of " + intervalTime + " : : : : : " + valOverTime*intervals);
+    // console.log(valOverTime + " : : : : " + intervals + " of " + intervalTime + " : : : : : " + valOverTime * intervals);
 }
 
-function change(intervals, intervalTime, valOverTime, startSpeed, counter) {
+function change(intervals, intervalTime, valOverTime, counter) {
 
-    startSpeed = document.getElementById("speed").innerHTML = startSpeed + valOverTime;
-    console.log(document.getElementById("speed").innerHTML)
-    console.log("RUN " + (counter));
+    startSpeed = parseInt(speedElem.innerHTML) + valOverTime;
+    speedElem.innerHTML = startSpeed;
 
     if (counter < intervals) {
         setTimeout(function() {
-            change(intervals, intervalTime, valOverTime, startSpeed, counter + 1);
+            change(intervals, intervalTime, valOverTime, counter + 1);
         }, intervalTime)
     }
 
 }
 
 changeValue(20, 5000, 5000);
-changeValue(30, 1200, 11000);
-
-// setTimeout(function() { 
-//     changeValue(60, 10000) 
-// }, 10000);
+changeValue(-15, 1500, 11000);
