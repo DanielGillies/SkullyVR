@@ -13,14 +13,31 @@ p {
 .banner {
     position: absolute;
     height: 20px;
-    background-color: blue;
-    width: 120px;
-    bottom: calc(20% + 50px);
+    background-color: #fff;
+    width: 160px;
+    bottom: calc(10% + 70px);
     z-index: 101;
     opacity: .5;
 }
 
 #b1 {
     right: 10%;
-    display: none;
+}
+
+#stats {
+    z-index: 10000;
+    position: fixed;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    font-size: 24px;
+}
+
+#stats2 {
+    z-index: 10000;
+    position: fixed;
+    background-color: white;
+    top: 0;
+    left: 0;
+    font-size: 24px;
 }

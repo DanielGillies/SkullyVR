@@ -1,3 +1,3 @@
 var config = {
-    video: '360_1.mp4'
+    video: 'tahoe.mp4'
 }

@@ -14,6 +14,20 @@
     <script src="js/DeviceOrientationController.js"></script>
     <script src="js/StereoEffect.js"></script>
     <script src="js/config.js"></script>
+    <script src="js/clock.js"></script>
+    <div id="stats">
+        <p id="alpha">Alpha: </p>
+        <p id="beta">beta: </p>
+        <p id="gamma">gamma: </p>
+        <p id="orient">orient: </p>
+    </div>
+
+    <div id="stats2">
+        <p id="alpha2">Alpha: </p>
+        <p id="beta2">beta: </p>
+        <p id="gamma2">gamma: </p>
+        <p id="orient2">orient: </p>
+    </div>
     <video id="video" muted preload loop style="display:none">
         <source type="video/mp4">
     </video>
@@ -29,13 +43,14 @@
     </div>
     <h2 id="prompt">Tap to Begin</h2>
     <div class="banner" id="b1">
-        <p>60 MPH</p>
+        <p id="speed">0</p>
     </div>
     <script src="js/getVid.js"></script>
     <script>
     var camera, camera2, scene, renderer, renderer2;
     var geometry, material, mesh, texture, skybox;
     var controls, controls2;
+    var clock;
 
     var loader = new THREE.TextureLoader();
 
@@ -109,6 +124,12 @@
         skyBox.scale.set(-1, 1, 1);
         skyBox.rotation.y = -Math.PI / 2;
         scene.add(skyBox);
+
+        clock = new Clock(true);
+
+        setTimeout(function() {
+            console.log(clock.getElapsedTime());
+        }, 3000)
 
         window.addEventListener('resize', onWindowResize, false);
 

@@ -36,3 +36,38 @@ xhr.onprogress = function(e) {
 }
 
 xhr.send();
+
+function changeValue(value, duration, startTime) {
+    console.log("called changeValue")
+    var startSpeed = parseInt(document.getElementById("speed").innerHTML);
+    var intervals = duration * 2 / 1000;
+    var valOverTime = value / intervals;
+    var intervalTime = duration / intervals;
+
+    setTimeout(function() {
+        change(intervals, intervalTime, valOverTime, startSpeed, 1)
+    }, startTime);
+
+    // console.log(valOverTime + " : : : : " + intervals + " of " + intervalTime + " : : : : : " + valOverTime*intervals);
+}
+
+function change(intervals, intervalTime, valOverTime, startSpeed, counter) {
+
+    startSpeed = document.getElementById("speed").innerHTML = startSpeed + valOverTime;
+    console.log(document.getElementById("speed").innerHTML)
+    console.log("RUN " + (counter));
+
+    if (counter < intervals) {
+        setTimeout(function() {
+            change(intervals, intervalTime, valOverTime, startSpeed, counter + 1);
+        }, intervalTime)
+    }
+
+}
+
+changeValue(20, 5000, 5000);
+changeValue(30, 1200, 11000);
+
+// setTimeout(function() { 
+//     changeValue(60, 10000) 
+// }, 10000);
