@@ -39,7 +39,6 @@ xhr.onprogress = function(e) {
 xhr.send();
 
 function changeValue(value, duration, startTime) {
-    console.log("called changeValue")
     var intervals = duration * 2 / 1000;
     var valOverTime = value / intervals;
     var intervalTime = duration / intervals;
@@ -54,7 +53,7 @@ function changeValue(value, duration, startTime) {
 function change(intervals, intervalTime, valOverTime, counter) {
 
     startSpeed = parseInt(speedElem.innerHTML) + valOverTime;
-    speedElem.innerHTML = startSpeed;
+    speedElem.innerHTML = Math.round(startSpeed);
 
     if (counter < intervals) {
         setTimeout(function() {
@@ -64,5 +63,14 @@ function change(intervals, intervalTime, valOverTime, counter) {
 
 }
 
-changeValue(20, 5000, 5000);
-changeValue(-15, 1500, 11000);
+function jiggle(time, downFirst) {
+    if (downFirst) {
+        changeValue(-2, 1000, time);
+        changeValue(1, 1000, time+2000);
+    } else {
+        changeValue(1, 1000, time);
+        changeValue(-2, 1000, time+2000);
+    }
+}
+// changeValue(20, 5000, 5000);
+// changeValue(-15, 1500, 11000);

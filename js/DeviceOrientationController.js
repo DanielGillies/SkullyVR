@@ -489,12 +489,6 @@ var DeviceOrientationController = function(object, domElement) {
             gamma = THREE.Math.degToRad(-this.deviceOrientation.gamma || 0); // Y''
             orient = THREE.Math.degToRad(-this.screenOrientation || 0); // O
 
-            document.getElementById("alpha").innerHTML = ("ALPHA: " + alpha)
-            document.getElementById("beta").innerHTML = ("BETA: " + beta)
-            document.getElementById("gamma").innerHTML = ("GAMMA: " + gamma)
-            document.getElementById("orient").innerHTML =("ORIENT: " + orient)
-
-
             // only process non-zero 3-axis data
             if (alpha !== 0 && beta !== 0 && gamma !== 0) {
 
@@ -532,11 +526,6 @@ var DeviceOrientationController = function(object, domElement) {
             beta = THREE.Math.degToRad(this.deviceOrientation.beta || 0); // X'
             gamma = THREE.Math.degToRad(this.deviceOrientation.gamma || 0); // Y''
             orient = THREE.Math.degToRad(this.screenOrientation || 0); // O
-
-            document.getElementById("alpha2").innerHTML = ("ALPHA: " + alpha)
-            document.getElementById("beta2").innerHTML = ("BETA: " + beta)
-            document.getElementById("gamma2").innerHTML = ("GAMMA: " + gamma)
-            document.getElementById("orient2").innerHTML =("ORIENT: " + orient)
 
             // only process non-zero 3-axis data
             if (alpha !== 0 && beta !== 0 && gamma !== 0) {

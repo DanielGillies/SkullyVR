@@ -24,7 +24,7 @@ p {
     right: 10%;
 }
 
-#stats {
+#stats1 {
     z-index: 10000;
     position: fixed;
     background-color: white;
