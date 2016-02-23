@@ -16,6 +16,16 @@ xhr.onload = function(e) {
         // not needed if autoplay is set for the video element
         // video.play()
         document.getElementById("prompt").style.display = "inline";
+        
+        document.addEventListener("touchstart", function() {
+            document.getElementById("preloadBlocker").style.display = "none";
+            document.getElementById("prompt").style.display = "none";
+
+            init();
+            animate();
+            document.removeEventListener("touchstart", arguments.callee, false);
+        }, false)
+
         document.addEventListener("click", function() {
             document.getElementById("preloadBlocker").style.display = "none";
             document.getElementById("prompt").style.display = "none";
@@ -66,10 +76,10 @@ function change(intervals, intervalTime, valOverTime, counter) {
 function jiggle(time, downFirst) {
     if (downFirst) {
         changeValue(-2, 1000, time);
-        changeValue(1, 1000, time+2000);
+        changeValue(1, 1000, time + 2000);
     } else {
         changeValue(1, 1000, time);
-        changeValue(-2, 1000, time+2000);
+        changeValue(-2, 1000, time + 2000);
     }
 }
 // changeValue(20, 5000, 5000);
