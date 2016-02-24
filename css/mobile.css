@@ -10,6 +10,14 @@ p {
     height: 20px;
 }
 
+#canvas0 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
 #canvas1 {
     position: absolute;
     z-index: 100;
