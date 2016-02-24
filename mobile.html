@@ -15,7 +15,7 @@
     <script src="js/DeviceOrientationControls.js"></script>
     <script src="js/StereoEffect.js"></script>
     <script src="js/config.js"></script>
-    <video id="video" muted preload loop style="display:none">
+    <video id="video" muted preload style="display:none">
         <source type="video/mp4">
     </video>
     <div id="preloadBlocker">
@@ -30,8 +30,14 @@
     </div>
     <h2 id="prompt">Tap to Begin</h2>
     <div class="banner" id="b1">
-        <div id="speed">0</div><div id="gps"><img src="nav.png"><div id="distance">12.3</div></div>
+        <p class="inline" id="speed">0</p>
+        <div class="inline" id="gps"><img src="nav.png">
+            <p class="inline" id="distance">12.3</p>
+        </div>
     </div>
+
+
+
     <script src="js/getVid.js"></script>
     <script>
     var camera, camera2, scene, renderer, renderer2;
@@ -55,7 +61,7 @@
 
     function init() {
         addStats();
-        
+
         camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 1, 1000);
         camera2 = new THREE.PerspectiveCamera(120, window.innerWidth / window.innerHeight, 1, 1000);
 
@@ -110,8 +116,12 @@
         jiggle(36000, false);
         jiggle(40000, false);
 
-    }
+        document.getElementById("video").addEventListener("ended", function(e) {
+            console.log(this.currentTime)
+        });
 
+    }
+    
     function onWindowResize() {
 
         camera.aspect = window.innerWidth / window.innerHeight;

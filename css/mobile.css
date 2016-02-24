@@ -1,9 +1,12 @@
+p {
+    margin: 0;
+}
+
 #speed {
-    display: inline;
-    font-size: 20px;
+    float: left;
+    font-size: 16px;
+    line-height: 20px;
     height: 20px;
-    position: relative;
-    bottom: 0;
 }
 #canvas1 {
     position: absolute;
@@ -38,9 +41,8 @@
 }
 
 #distance {
-    bottom: 0;
     display: inline;
-    height: 20px !important;
-    font-size: 20px;
-    position: relative;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
 }

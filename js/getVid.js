@@ -17,7 +17,7 @@ xhr.onload = function(e) {
         // not needed if autoplay is set for the video element
         // video.play()
         document.getElementById("prompt").style.display = "inline";
-        
+
         document.addEventListener("touchstart", function() {
             document.getElementById("preloadBlocker").style.display = "none";
             document.getElementById("prompt").style.display = "none";
@@ -94,4 +94,16 @@ function decreaseDistance() {
     temp = temp.toFixed(1);
     distanceElem.innerHTML = temp;
     setTimeout(decreaseDistance, 6000);
+}
+
+function resetHUD() {
+    distanceElem.innerHTML = "13.2";
+    speedElem.innerHTML = "0";
+    changeValue(2, 1000, 1000);
+    changeValue(30, 6000, 11000);
+    changeValue(25, 9000, 17000);
+    jiggle(30000, true);
+    jiggle(36000, false);
+    jiggle(40000, false);
+    document.getElementById("video").play();
 }
