@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic);
+
 html,
 body {
     width: 100%;
@@ -5,12 +7,12 @@ body {
     background-color: #ffffff;
     margin: 0;
     overflow: hidden;
-    font-family: arial;
+    font-family: "Helvetica Neue", Arimo;
 }
 
 h1 {
     text-align: center;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    /*font-family: "Trebuchet MS", Helvetica, sans-serif;*/
     font-weight: normal;
     margin: 50px 0 0;
 }
@@ -131,5 +133,5 @@ h2 {
 }
 
 .inline {
-    display: inline;
+    display: inline-block;
 }

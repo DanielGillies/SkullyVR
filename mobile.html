@@ -29,15 +29,17 @@
         </div>
     </div>
     <h2 id="prompt">Tap to Begin</h2>
-    <div class="banner" id="b1">
-        <p class="inline" id="speed">0</p>
-        <div class="inline" id="gps"><img src="nav.png">
+    <div class="banner overlay" id="b1">
+        <div class="inline" id="gps">
+            <img src="gps.svg">
             <p class="inline" id="distance">12.3</p>
+            <p class="inline">mi</p>
+        </div>
+        <div class="inline" id="speedMod">
+            <p class="inline">mph</p>
+            <p class="inline" id="speed">0</p>
         </div>
     </div>
-
-
-
     <script src="js/getVid.js"></script>
     <script>
     var camera, camera2, scene, renderer, renderer2;
@@ -117,11 +119,11 @@
         jiggle(40000, false);
 
         document.getElementById("video").addEventListener("ended", function(e) {
-            console.log(this.currentTime)
+            resetHUD();
         });
 
     }
-    
+
     function onWindowResize() {
 
         camera.aspect = window.innerWidth / window.innerHeight;

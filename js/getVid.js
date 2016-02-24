@@ -9,7 +9,7 @@ xhr.onload = function(e) {
     if (this.status == 200) {
         console.log("got it");
         var myBlob = this.response;
-        var vid = (window.webkitURL ? webkitURL : URL).createObjectURL(myBlob);
+        var vid = (window.URL ? URL : URL).createObjectURL(myBlob);
         // myBlob is now the blob that the object URL pointed to.
         var video = document.getElementById("video");
         console.log("Loading video into element");
