@@ -15,18 +15,6 @@
     <script src="js/DeviceOrientationControls.js"></script>
     <script src="js/StereoEffect.js"></script>
     <script src="js/config.js"></script>
-    <div id="stats1">
-        <p id="alpha">Alpha: </p>
-        <p id="beta">beta: </p>
-        <p id="gamma">gamma: </p>
-        <p id="orient">orient: </p>
-    </div>
-    <div id="stats2">
-        <p id="alpha2">Alpha: </p>
-        <p id="beta2">beta: </p>
-        <p id="gamma2">gamma: </p>
-        <p id="orient2">orient: </p>
-    </div>
     <video id="video" muted preload loop style="display:none">
         <source type="video/mp4">
     </video>
@@ -42,7 +30,7 @@
     </div>
     <h2 id="prompt">Tap to Begin</h2>
     <div class="banner" id="b1">
-        <p id="speed">0</p>
+        <div id="speed">0</div><div id="gps"><img src="nav.png"><div id="distance">12.3</div></div>
     </div>
     <script src="js/getVid.js"></script>
     <script>
@@ -54,24 +42,6 @@
     var loader = new THREE.TextureLoader();
 
     var controlsEnabled = true;
-
-    // document.addEventListener("touchstart", function() {
-    //     if (!inited) {
-    //         inited = true;
-    //         console.log("TOUCHED")
-    //         init();
-    //         animate();
-    //     }
-    // })
-
-    // document.addEventListener("click", function() {
-    //     if (!inited) {
-    //         inited = true;
-    //         console.log("CLICKED")
-    //         init();
-    //         animate();
-    //     }
-    // }, false)
 
     function addStats() {
         stats = new Stats();
@@ -132,6 +102,7 @@
         scene.add(skyBox);
 
         window.addEventListener('resize', onWindowResize, false);
+        startGPS();
         changeValue(2, 1000, 1000);
         changeValue(30, 6000, 11000);
         changeValue(25, 9000, 17000);

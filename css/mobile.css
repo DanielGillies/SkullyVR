@@ -1,7 +1,10 @@
-p {
-    margin: 0;
+#speed {
+    display: inline;
+    font-size: 20px;
+    height: 20px;
+    position: relative;
+    bottom: 0;
 }
-
 #canvas1 {
     position: absolute;
     z-index: 100;
@@ -24,20 +27,20 @@ p {
     right: 10%;
 }
 
-#stats1 {
-    z-index: 10000;
-    position: fixed;
-    background-color: white;
-    bottom: 0;
-    left: 0;
-    font-size: 24px;
+#gps {
+    display: inline;
+    height: 20px;
+    float: right;
 }
 
-#stats2 {
-    z-index: 10000;
-    position: fixed;
-    background-color: white;
-    top: 0;
-    left: 0;
-    font-size: 24px;
+#gps img {
+    height: 20px;
+}
+
+#distance {
+    bottom: 0;
+    display: inline;
+    height: 20px !important;
+    font-size: 20px;
+    position: relative;
 }

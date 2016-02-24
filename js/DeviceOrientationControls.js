@@ -91,11 +91,6 @@ THREE.DeviceOrientationControls = function(object) {
         var gamma = scope.deviceOrientation.gamma ? THREE.Math.degToRad(scope.deviceOrientation.gamma) : 0; // Y''
         var orient = scope.screenOrientation ? THREE.Math.degToRad(scope.screenOrientation) : 0; // O
 
-        // document.getElementById("alpha").innerHTML = ("ALPHA: " + alpha)
-        // document.getElementById("beta").innerHTML = ("BETA: " + beta)
-        // document.getElementById("gamma").innerHTML = ("GAMMA: " + gamma)
-        // document.getElementById("orient").innerHTML = ("ORIENT: " + orient)
-
         setObjectQuaternion(scope.object.quaternion, alpha, beta, gamma, orient, false);
 
     };
@@ -107,11 +102,6 @@ THREE.DeviceOrientationControls = function(object) {
         var beta = scope.deviceOrientation.beta ? THREE.Math.degToRad(this.deviceOrientation.beta) : 0; // X'
         var gamma = -scope.deviceOrientation.gamma ? THREE.Math.degToRad(this.deviceOrientation.gamma) : 0; // Y''
         var orient = -scope.screenOrientation ? THREE.Math.degToRad(this.screenOrientation) : 0; // O
-
-        // document.getElementById("alpha2").innerHTML = ("ALPHA: " + alpha)
-        // document.getElementById("beta2").innerHTML = ("BETA: " + beta)
-        // document.getElementById("gamma2").innerHTML = ("GAMMA: " + gamma)
-        // document.getElementById("orient2").innerHTML = ("ORIENT: " + orient)
 
         setObjectQuaternion(scope.object.quaternion, alpha, beta, gamma, orient, true);
 

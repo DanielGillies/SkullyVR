@@ -1,6 +1,7 @@
 var elem1 = document.getElementById("positive");
 var elem2 = document.getElementById("negative");
 var speedElem = document.getElementById("speed");
+var distanceElem = document.getElementById("distance");
 var xhr = new XMLHttpRequest();
 xhr.open('GET', config.video, true);
 xhr.responseType = 'blob';
@@ -82,5 +83,15 @@ function jiggle(time, downFirst) {
         changeValue(-2, 1000, time + 2000);
     }
 }
-// changeValue(20, 5000, 5000);
-// changeValue(-15, 1500, 11000);
+
+function startGPS() {
+    setTimeout(decreaseDistance, 6000);
+}
+
+function decreaseDistance() {
+    var currDist = parseFloat(distanceElem.innerHTML);
+    var temp = currDist - 0.1;
+    temp = temp.toFixed(1);
+    distanceElem.innerHTML = temp;
+    setTimeout(decreaseDistance, 6000);
+}
