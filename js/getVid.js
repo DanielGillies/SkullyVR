@@ -2,6 +2,8 @@ var elem1 = document.getElementById("positive");
 var elem2 = document.getElementById("negative");
 var speedElem = document.getElementById("speed");
 var distanceElem = document.getElementById("distance");
+var speedElem2 = document.getElementById("speed2");
+var distanceElem2 = document.getElementById("distance2");
 var xhr = new XMLHttpRequest();
 xhr.open('GET', config.video, true);
 xhr.responseType = 'blob';
@@ -18,14 +20,14 @@ xhr.onload = function(e) {
         // video.play()
         document.getElementById("prompt").style.display = "inline";
 
-        document.addEventListener("touchstart", function() {
-            document.getElementById("preloadBlocker").style.display = "none";
-            document.getElementById("prompt").style.display = "none";
+        // document.addEventListener("touchstart", function() {
+        //     document.getElementById("preloadBlocker").style.display = "none";
+        //     document.getElementById("prompt").style.display = "none";
 
-            init();
-            animate();
-            document.removeEventListener("touchstart", arguments.callee, false);
-        }, false)
+        //     init();
+        //     animate();
+        //     document.removeEventListener("touchstart", arguments.callee, false);
+        // }, false)
 
         document.addEventListener("click", function() {
             document.getElementById("preloadBlocker").style.display = "none";
@@ -65,6 +67,7 @@ function change(intervals, intervalTime, valOverTime, counter) {
 
     startSpeed = parseInt(speedElem.innerHTML) + valOverTime;
     speedElem.innerHTML = Math.round(startSpeed);
+    speedElem2.innerHTML = Math.round(startSpeed);
 
     if (counter < intervals) {
         setTimeout(function() {
@@ -93,12 +96,15 @@ function decreaseDistance() {
     var temp = currDist - 0.1;
     temp = temp.toFixed(1);
     distanceElem.innerHTML = temp;
+    distanceElem2.innerHTML = temp;
     setTimeout(decreaseDistance, 6000);
 }
 
 function resetHUD() {
     distanceElem.innerHTML = "13.2";
     speedElem.innerHTML = "0";
+    distanceElem2.innerHTML = "13.2";
+    speedElem2.innerHTML = "0";
     changeValue(2, 1000, 1000);
     changeValue(30, 6000, 11000);
     changeValue(25, 9000, 17000);

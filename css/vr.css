@@ -17,20 +17,57 @@ p {
     opacity: .6;
 }
 
-.banner {
-    position: absolute;
-    height: 20px;
-    background-color: blue;
-    width: 120px;
-    bottom: calc(20% + 50px);
-    z-index: 101;
-    opacity: .5;
-}
-
 #b1 {
     right: 10%;
 }
 
 #b2 {
     right: 60%;
+}
+
+#speedMod {
+    z-index: 1000;
+    padding-right: 5px;
+    float: right;
+    line-height: 20px;
+    height: 20px;
+}
+
+.banner {
+    position: absolute;
+    height: 20px;
+    width: 160px;
+    bottom: calc(20% + 70px);
+    z-index: 500;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.overlay:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #282828;
+    opacity: .5;
+    z-index: -1;
+}
+
+#gps {
+    z-index: 1000;
+    padding-left: 5px;
+    display: inline;
+    height: 20px;
+    float: left;
+    line-height: 20px;
+}
+
+#gps img {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+    height: 20px;
+    vertical-align: middle;
 }

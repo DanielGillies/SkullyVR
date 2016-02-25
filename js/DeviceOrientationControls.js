@@ -98,10 +98,10 @@ THREE.DeviceOrientationControls = function(object) {
     this.updateReverse = function() {
         if (scope.enabled === false) return;
 
-        var alpha = scope.deviceOrientation.alpha ? THREE.Math.degToRad(this.deviceOrientation.alpha) : 0; // Z
-        var beta = scope.deviceOrientation.beta ? THREE.Math.degToRad(this.deviceOrientation.beta) : 0; // X'
-        var gamma = -scope.deviceOrientation.gamma ? THREE.Math.degToRad(this.deviceOrientation.gamma) : 0; // Y''
-        var orient = -scope.screenOrientation ? THREE.Math.degToRad(this.screenOrientation) : 0; // O
+        var alpha = scope.deviceOrientation.alpha ? THREE.Math.degToRad(scope.deviceOrientation.alpha) : 0; // Z
+        var beta = scope.deviceOrientation.beta ? THREE.Math.degToRad(scope.deviceOrientation.beta) : 0; // X'
+        var gamma = -scope.deviceOrientation.gamma ? THREE.Math.degToRad(scope.deviceOrientation.gamma) : 0; // Y''
+        var orient = -scope.screenOrientation ? THREE.Math.degToRad(scope.screenOrientation) : 0; // O
 
         setObjectQuaternion(scope.object.quaternion, alpha, beta, gamma, orient, true);
 
