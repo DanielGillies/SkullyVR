@@ -1,3 +1,5 @@
+var elem1 = document.getElementById("positive");
+var elem2 = document.getElementById("negative");
 var xhr = new XMLHttpRequest();
 xhr.open('GET', config.video, true);
 xhr.responseType = 'blob';

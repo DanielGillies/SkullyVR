@@ -1,5 +1,3 @@
-var elem1 = document.getElementById("positive");
-var elem2 = document.getElementById("negative");
 var speedElem = document.getElementById("speed");
 var distanceElem = document.getElementById("distance");
 var speedElem2 = document.getElementById("speed2");
