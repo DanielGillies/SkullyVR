@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title></title>
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/index.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -9,38 +11,22 @@
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <input type='radio' id='desktop-btn' name='radio'>
-                <label for='radio1-1'>Desktop Experience</label>
+        <div id="step1" class="question current">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <h2>Are you on a mobile device?</h2>
+                </div>
             </div>
-            <div class="col-md-4">
-                <input type='radio' id='mobile-btn' name='radio'>
-                <label for='radio1-2'>Mobile Experience</label>
-            </div>
-            <div class="col-md-4">
-                <input type='radio' id='vr-btn' checked='checked' name='radio'>
-                <label for='radio1-3'>VR Experience</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3 col-sm-12">
-                <a href="vr.html" id="gobtn">GO</a>
+            <div class="row">
+                <div class="col-md-offset-2 col-md-4">
+                    <a class="answerBtn">Yes</a>
+                </div>
+                <div class="col-md-4">
+                    <a class="answerBtn">No</a>
+                </div>
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-    $("input").on("change", function() {
-        var selected = $("input[name=radio]:checked").attr("id");
-        if (selected == "desktop-btn") {
-            $("#gobtn").attr("href", "desktop.html");
-        } else if (selected == "mobile-btn") {
-            $("#gobtn").attr("href", "mobile.html");
-        } else {
-            $("#gobtn").attr("href", "vr.html");
-        }
-    })
-    </script>
 </body>
 
 </html>
