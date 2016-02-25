@@ -1,8 +1,14 @@
-var speedElem = document.getElementById("speed");
-var distanceElem = document.getElementById("distance");
-var speedElem2 = document.getElementById("speed2");
-var distanceElem2 = document.getElementById("distance2");
+var speedElem;
+var distancElem;
+var speedElem2;
+var distanceElem2;
 
+function initScripts() {
+    speedElem = document.getElementById("speed");
+    distanceElem = document.getElementById("distance");
+    speedElem2 = document.getElementById("speed2");
+    distanceElem2 = document.getElementById("distance2");
+}
 
 function changeValue(value, duration, startTime) {
     var intervals = duration * 2 / 1000;

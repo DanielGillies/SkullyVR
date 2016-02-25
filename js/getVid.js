@@ -1,7 +1,7 @@
 var elem1 = document.getElementById("positive");
 var elem2 = document.getElementById("negative");
 var xhr = new XMLHttpRequest();
-xhr.open('GET', "https://vr.skully.com/tahoe_sm.mp4", true);
+xhr.open('GET', config.video, true);
 xhr.responseType = 'blob';
 xhr.onload = function(e) {
     if (this.status == 200) {
@@ -30,6 +30,7 @@ xhr.onload = function(e) {
             document.getElementById("prompt").style.display = "none";
 
             init();
+            initScripts();
             animate();
             document.removeEventListener("click", arguments.callee, false);
         }, false)

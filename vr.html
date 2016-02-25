@@ -19,6 +19,7 @@
     <video id="video" muted preload style="display:none">
         <source type="video/mp4">
     </video>
+    <canvas id="copy"></canvas>
     <div id="preloadBlocker">
         <div class="progress-bar">
             <div id="positive" class="bar positive">
@@ -41,7 +42,12 @@
             <p class="inline" id="speed">0</p>
         </div>
     </div>
-
+    <!-- <div id="vign1" class="vignette">
+        <img src="vignette.png">
+    </div>
+    <div id="vign2" class="vignette">
+        <img src="vignette.png">
+    </div> -->
     <div class="banner overlay" id="b2">
         <div class="inline" id="gps">
             <img src="gps.svg">
@@ -58,8 +64,9 @@
     var camera, camera2, scene, renderer, renderer2, effect;
     var geometry, material, mesh, texture, skybox;
     var controls, controls2;
-    var stats;
     var canv, destCanv, ctx;
+
+    var worldPos = new THREE.Vector3();
 
     var loader = new THREE.TextureLoader();
 
@@ -79,7 +86,7 @@
 
         renderer2 = new THREE.WebGLRenderer();
         renderer2.setPixelRatio(window.devicePixelRatio);
-        renderer2.setSize(120, 70);
+        renderer2.setSize(80, 50);
         document.body.appendChild(renderer2.domElement);
 
         effect = new THREE.StereoEffect(renderer);
@@ -89,7 +96,7 @@
 
         for (var j = 0; j < canvases.length; j++) {
             if (canvases[j].id === "")
-                canvases[j].setAttribute("id", "canvas" + (j));
+                canvases[j].setAttribute("id", "canvas" + (j - 1));
         }
 
         fullscreen();
@@ -99,7 +106,7 @@
         controls.connect();
         controls2.connect();
 
-        geometry = new THREE.SphereGeometry(10, 60, 40);
+        geometry = new THREE.SphereGeometry(100, 60, 40);
 
         var video = document.getElementById("video")
         video.play();
@@ -115,11 +122,10 @@
         skyBox.rotation.y = -Math.PI / 2;
         scene.add(skyBox);
 
-        canv = document.getElementById("canvas1");
-        destCanv = document.createElement('canvas');
-        destCanv.id = "copy";
+        camera.add(object);
 
-        document.body.appendChild(destCanv);
+        canv = document.getElementById("canvas1");
+        destCanv = document.getElementById("copy");
         destCanv.width = canv.width;
         destCanv.height = canv.height;
         destCanv.style.cssText = canv.style.cssText;
