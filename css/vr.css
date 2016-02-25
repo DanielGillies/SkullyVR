@@ -29,18 +29,18 @@ p {
     z-index: 1000;
     padding-right: 5px;
     float: right;
-    line-height: 20px;
-    height: 20px;
+    line-height: 16px;
+    height: 16px;
 }
 
 .banner {
     position: absolute;
-    height: 20px;
-    width: 160px;
+    height: 16px;
+    width: 120px;
     bottom: calc(20% + 70px);
     z-index: 500;
     color: #fff;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
 }
 
@@ -60,14 +60,14 @@ p {
     z-index: 1000;
     padding-left: 5px;
     display: inline;
-    height: 20px;
+    height: 16px;
     float: left;
-    line-height: 20px;
+    line-height: 16px;
 }
 
 #gps img {
     -webkit-filter: invert(1);
     filter: invert(1);
-    height: 20px;
+    height: 16px;
     vertical-align: middle;
 }
