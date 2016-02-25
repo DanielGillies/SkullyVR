@@ -1,3 +1,3 @@
 var config = {
-    video: 'http://vr.skully.com/tahoe_sm.mp4'
+    video: 'https://vr.skully.com/tahoe_sm.mp4'
 }
