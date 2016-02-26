@@ -11,7 +11,7 @@
 
 <body>
     <div class="container">
-        <div id="step1" class="question current">
+        <div id="step0" class="question current">
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <h2>Are you on a mobile device?</h2>
@@ -19,14 +19,58 @@
             </div>
             <div class="row">
                 <div class="col-md-offset-2 col-md-4">
-                    <a class="answerBtn">YesFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</a>
+                    <input type="button" class="answerBtn" data-val="1" value="YES">
                 </div>
                 <div class="col-md-4">
-                    <a class="answerBtn">No</a>
+                    <input type="button" class="answerBtn" data-val="0" value="NO">
                 </div>
             </div>
         </div>
+        <div id="step1" class="question current">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <h2>Do you have a google cardboard?</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-2 col-md-4">
+                    <input type="button" class="answerBtn" data-val="1" value="YES">
+                </div>
+                <div class="col-md-4">
+                    <input type="button" class="answerBtn" data-val="0" value="NO">
+                </div>
+            </div>
+        </div>
+        <div id="gobtn">
+            <a id="link">Experience the AR-1</a>
+        </div>
     </div>
+    <script>
+    $(".answerBtn").click(function() {
+        // Check answer for fist question
+        if ($(this).closest(".question").attr("id") == "step0") {
+            if ($(this).data("val") == 0) {
+                $("#link").attr("href", "desktop.html");
+                $(".question").css("display", "none");
+                $("#gobtn").css("display", "block");
+            } else {
+                $("#step0").css("display", "none");
+                $("#step1").css("display", "block");
+            }
+        } else {
+            // ON SECOND QUESTION
+            if ($(this).data("val") == 0) {
+                $("#link").attr("href", "mobile.html");
+            } else {
+                $("#link").attr("href", "vr.html");
+            }
+            $(".question").css("display", "none");
+            $("#gobtn").css("display", "block");
+        }
+        console.log($(this).closest(".question").attr("id"))
+        console.log($(this).data("val"))
+    })
+    </script>
 </body>
 
 </html>

@@ -5,20 +5,35 @@
     <title>SKULLY Desktop Experience</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/desktop.css">
 </head>
 
 <body>
     <script src="js/THREE/three.min.js"></script>
     <script src="js/THREE/PointerLockControls.js"></script>
-    <div id="blocker">
+    <script src="js/config.js"></script>
+    <script src="js/scripts.js"></script>
+     <div id="blocker">
         <div id="instructions">
             <span style="font-size:40px">Click to Look Around</span>
         </div>
     </div>
+    <div id="preloadBlocker">
+        <div class="progress-bar">
+            <div id="positive" class="bar positive">
+                <span>0%</span>
+            </div>
+            <div id="negative" class="bar negative">
+                <span>0%</span>
+            </div>
+        </div>
+    </div>
+    <h2 id="prompt">Tap to Begin</h2>
     <video id="video" muted preload loop style="display:none">
         <source type="video/mp4">
     </video>
+    <script src="js/getVid.js"></script>
     <script>
     var camera, camera2, scene, renderer, renderer2
     var geometry, material, mesh, texture, skybox;
@@ -26,8 +41,6 @@
 
     var blocker = document.getElementById('blocker');
     var instructions = document.getElementById('instructions');
-
-    // http://www.html5rocks.com/en/tutorials/pointerlock/intro/
 
     var havePointerLock = 'pointerLockElement' in document || 'mozPointerLockElement' in document || 'webkitPointerLockElement' in document;
 
@@ -134,11 +147,6 @@
         camera2 = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
 
         scene = new THREE.Scene();
-        scene.fog = new THREE.Fog(0xffffff, 0, 750);
-
-        var light = new THREE.HemisphereLight(0xeeeeff, 0x777788, 0.75);
-        light.position.set(0.5, 1, 0.75);
-        scene.add(light);
 
         controls = new THREE.PointerLockControls(camera);
         scene.add(controls.getObject());
