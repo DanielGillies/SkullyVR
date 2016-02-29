@@ -16,15 +16,15 @@ xhr.onload = function(e) {
         // video.play()
         document.getElementById("prompt").style.display = "inline";
 
-        document.addEventListener("touchstart", function() {
-            document.getElementById("preloadBlocker").style.display = "none";
-            document.getElementById("prompt").style.display = "none";
+        // document.addEventListener("touchstart", function() {
+        //     document.getElementById("preloadBlocker").style.display = "none";
+        //     document.getElementById("prompt").style.display = "none";
 
-            init();
-            initScripts();
-            animate();
-            document.removeEventListener("touchstart", arguments.callee, false);
-        }, false)
+        //     init();
+        //     initScripts()
+        //     animate();
+        //     document.removeEventListener("touchstart", arguments.callee, false);
+        // }, false)
 
         document.addEventListener("click", function() {
             document.getElementById("preloadBlocker").style.display = "none";
