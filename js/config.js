@@ -1,4 +1,4 @@
 var config = {
-    video: 'lacanyon_sm.mp4',
+    video: 'lacanyon.mp4',
     test: "FIELD"
 }
