@@ -4,20 +4,18 @@
 <head>
     <meta charset="utf-8">
     <title>SKULLY VR Experience</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/vr.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="vr.css">
 </head>
 
 <body>
     <!--<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.1.0/annyang.min.js"></script>-->
-    <script src="js/THREE/three.min.js"></script>
-    <script src="js/THREE/stats.js"></script>
-    <script src="js/THREE/DeviceOrientationControls.js"></script>
-    <script src="js/THREE/StereoEffect.js"></script>
-    <script src="js/config.js"></script>
-    <script src="js/scripts.js"></script>
-    <video id="video" muted preload style="display:none">
-        <source type="video/mp4">
+    <script src="three.min.js"></script>
+    <script src="DeviceOrientationControls.js"></script>
+    <script src="StereoEffect.js"></script>
+    <script src="scripts.js"></script>
+    <video id="video" muted style="display:none">
+        <source src="tahoe.mp4" type="video/mp4">
     </video>
     <canvas id="copy"></canvas>
     <div id="preloadBlocker">
@@ -59,7 +57,7 @@
             <p class="inline" id="speed2">0</p>
         </div>
     </div>
-    <script src="js/getVid.js"></script>
+    <script src="sxsw.js"></script>
     <script>
     var camera, camera2, scene, renderer, renderer2, effect;
     var geometry, material, mesh, texture, skybox;
@@ -86,7 +84,7 @@
 
         renderer2 = new THREE.WebGLRenderer();
         renderer2.setPixelRatio(window.devicePixelRatio);
-        renderer2.setSize(100, 60);
+        renderer2.setSize(80, 50);
         document.body.appendChild(renderer2.domElement);
 
         effect = new THREE.StereoEffect(renderer);

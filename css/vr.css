@@ -61,8 +61,8 @@ p {
 .banner {
     position: absolute;
     height: 14px;
-    width: 80px;
-    bottom: calc(18% + 36px);
+    width: 100px;
+    bottom: calc(18% + 46px);
     z-index: 500;
     color: #fff;
     font-size: 8px;
