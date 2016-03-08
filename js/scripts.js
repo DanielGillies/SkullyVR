@@ -75,11 +75,39 @@ function speedChange() {
     jiggle(56000, true);
 }
 
-function resetHUD() {
-    distanceElem.innerHTML = "12.3";
-    speedElem.innerHTML = "0";
-    distanceElem2.innerHTML = "12.3";
-    speedElem2.innerHTML = "0";
-    document.getElementById("video").play();
-    speedChange();
+function startTooltips() {
+    setTimeout(function() {
+        $("#hudTooltip .diagonal").fadeIn(1000, function() {
+            $("#hudTooltip .horizontal").fadeIn(1000, function() {
+                $("#hudTooltip .tooltipText").fadeIn(1000);
+            })
+        })
+        $("#hudTooltipC .diagonal").fadeIn(1000, function() {
+            $("#hudTooltipC .horizontal").fadeIn(1000, function() {
+                $("#hudTooltipC .tooltipText").fadeIn(1000);
+            })
+        })
+    }, 8000);
+
+     setTimeout(function() {
+        $("#hudTooltip .tooltipText").fadeOut(500, function() {
+            $("#hudTooltip .horizontal").fadeOut(500, function() {
+                $("#hudTooltip .diagonal").fadeOut(500);
+            })
+        })
+        $("#hudTooltipC .tooltipText").fadeOut(500, function() {
+            $("#hudTooltipC .horizontal").fadeOut(500, function() {
+                $("#hudTooltipC .diagonal").fadeOut(500);
+            })
+        })
+    }, 15000);
 }
+
+    function resetHUD() {
+        distanceElem.innerHTML = "12.3";
+        speedElem.innerHTML = "0";
+        distanceElem2.innerHTML = "12.3";
+        speedElem2.innerHTML = "0";
+        document.getElementById("video").play();
+        speedChange();
+    }

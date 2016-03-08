@@ -6,6 +6,7 @@
     <title>SKULLY VR Experience</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/vr.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -42,7 +43,17 @@
             <p class="inline" id="speed">0</p>
         </div>
     </div>
- <!--    <div id="vign1" class="vignette">
+    <div class="tooltip" id="hudTooltip">
+        <img class="horizontal" src="horizontal.png">
+        <img class="diagonal" src="diagonal.png">
+        <p class="tooltipText">This is your HUD. It shows you a rearview camera, speed, and GPS</p>
+    </div>
+    <div class="tooltip" id="hudTooltipC">
+        <img class="horizontal" src="horizontal.png">
+        <img class="diagonal" src="diagonal.png">
+        <p class="tooltipText">This is your HUD. It shows you a rearview camera, speed, and GPS</p>
+    </div>
+    <!--    <div id="vign1" class="vignette">
         <img src="vignette.png">
     </div>
     <div id="vign2" class="vignette">
@@ -132,6 +143,7 @@
         window.addEventListener('resize', onWindowResize, false);
         startGPS();
         speedChange();
+        startTooltips();
 
         // changeValue(30, 6000, 11000);
         // changeValue(25, 9000, 17000);
