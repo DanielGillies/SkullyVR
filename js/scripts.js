@@ -100,7 +100,7 @@ function startTooltips() {
                 $("#hudTooltipC .diagonal").fadeOut(500);
             })
         })
-    }, 18000);
+    }, 22000);
 }
 
 function resetHUD() {
