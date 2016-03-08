@@ -89,7 +89,7 @@ function startTooltips() {
         })
     }, 8000);
 
-     setTimeout(function() {
+    setTimeout(function() {
         $("#hudTooltip .tooltipText").fadeOut(500, function() {
             $("#hudTooltip .horizontal").fadeOut(500, function() {
                 $("#hudTooltip .diagonal").fadeOut(500);
@@ -103,11 +103,12 @@ function startTooltips() {
     }, 15000);
 }
 
-    function resetHUD() {
-        distanceElem.innerHTML = "12.3";
-        speedElem.innerHTML = "0";
-        distanceElem2.innerHTML = "12.3";
-        speedElem2.innerHTML = "0";
-        document.getElementById("video").play();
-        speedChange();
-    }
+function resetHUD() {
+    distanceElem.innerHTML = "12.3";
+    speedElem.innerHTML = "0";
+    distanceElem2.innerHTML = "12.3";
+    speedElem2.innerHTML = "0";
+    document.getElementById("video").play();
+    speedChange();
+    startTooltips();
+}
