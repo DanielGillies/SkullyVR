@@ -5,25 +5,37 @@ p {
 #canvas1 {
     position: absolute;
     z-index: 100;
-    right: 10%;
-    bottom: 18%;
+    right: 8%;
+    bottom: 19%;
     opacity: .6;
+    z-index: 400;
+     -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    filter: FlipH;
 }
 
 #copy {
     position: absolute;
     z-index: 100;
-    right: 60%;
-    bottom: 18%;
+    right: 58%;
+    bottom: 19%;
     opacity: .6;
+    z-index: 400;
+     -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    filter: FlipH;
 }
 
 #b1 {
-    right: 10%;
+    right: 8%;
 }
 
 #b2 {
-    right: 60%;
+    right: 58%;
 }
 
 #speedMod {
@@ -62,7 +74,7 @@ p {
     position: absolute;
     height: 14px;
     width: 100px;
-    bottom: calc(18% + 46px);
+    bottom: calc(19% + 46px);
     z-index: 500;
     color: #fff;
     font-size: 8px;

@@ -42,7 +42,7 @@
             <p class="inline" id="speed">0</p>
         </div>
     </div>
-    <!-- <div id="vign1" class="vignette">
+ <!--    <div id="vign1" class="vignette">
         <img src="vignette.png">
     </div>
     <div id="vign2" class="vignette">
@@ -131,12 +131,13 @@
 
         window.addEventListener('resize', onWindowResize, false);
         startGPS();
-        changeValue(2, 1000, 1000);
-        changeValue(30, 6000, 11000);
-        changeValue(25, 9000, 17000);
-        jiggle(30000, true);
-        jiggle(36000, false);
-        jiggle(40000, false);
+        speedChange();
+
+        // changeValue(30, 6000, 11000);
+        // changeValue(25, 9000, 17000);
+        // jiggle(30000, true);
+        // jiggle(36000, false);
+        // jiggle(40000, false);
 
         document.getElementById("video").addEventListener("ended", resetHUD, false);
 
