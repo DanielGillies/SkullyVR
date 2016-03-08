@@ -60,10 +60,10 @@ function decreaseDistance() {
 }
 
 function speedChange() {
-    changeValue(7, 3000, 4000); // 9 mph @ 7s
-    changeValue(15, 3000, 7000); // 22 mph @ 10s
-    changeValue(15, 5000, 10000); // 37 mph @ 15s
-    changeValue(12, 5000, 15000); // 50 mph @ 20s
+    changeValue(7, 5000, 4000); // 9 mph @ 7s
+    changeValue(15, 5000, 9000); // 22 mph @ 10s
+    changeValue(13, 5000, 14000); // 37 mph @ 15s
+    changeValue(10, 5000, 19000); // 50 mph @ 20s
     jiggle(22000, true);
     jiggle(25000, true);
     jiggle(27000, false);
@@ -76,9 +76,9 @@ function speedChange() {
 }
 
 function resetHUD() {
-    distanceElem.innerHTML = "13.2";
+    distanceElem.innerHTML = "12.3";
     speedElem.innerHTML = "0";
-    distanceElem2.innerHTML = "13.2";
+    distanceElem2.innerHTML = "12.3";
     speedElem2.innerHTML = "0";
     document.getElementById("video").play();
     speedChange();
