@@ -87,7 +87,7 @@ function startTooltips() {
                 $("#hudTooltipC .tooltipText").fadeIn(1000);
             })
         })
-    }, 8000);
+    }, 12000);
 
     setTimeout(function() {
         $("#hudTooltip .tooltipText").fadeOut(500, function() {
@@ -100,7 +100,7 @@ function startTooltips() {
                 $("#hudTooltipC .diagonal").fadeOut(500);
             })
         })
-    }, 15000);
+    }, 18000);
 }
 
 function resetHUD() {
