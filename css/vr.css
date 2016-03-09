@@ -5,7 +5,7 @@ p {
 #canvas1 {
     position: absolute;
     z-index: 100;
-    right: 8%;
+    right: 6%;
     bottom: 19%;
     opacity: .6;
     z-index: 400;
@@ -19,7 +19,7 @@ p {
 #copy {
     position: absolute;
     z-index: 100;
-    right: 58%;
+    right: 56%;
     bottom: 19%;
     opacity: .6;
     z-index: 400;
@@ -31,11 +31,11 @@ p {
 }
 
 #b1 {
-    right: 8%;
+    right: 6%;
 }
 
 #b2 {
-    right: 58%;
+    right: 56%;
 }
 
 #speedMod {
@@ -116,6 +116,7 @@ p {
     height: 100px;
     width: 120px;
     position: absolute;
+    z-index: 20000;
 }
 
 .tooltipText {
@@ -124,7 +125,7 @@ p {
     position: absolute;
     font-size: 8px;
     bottom: 6px;
-    width: 150px;
+    width: 160px;
     left: 0;
     color: #ffffff;
     display: none;
@@ -222,10 +223,10 @@ p {
 
 #hudTooltip {
     bottom: calc(19% + 80px);
-    right: 8%;
+    right: 6%;
 }
 
 #hudTooltipC {
     bottom: calc(19% + 80px);
-    right: 58%;
+    right: 56%;
 }
