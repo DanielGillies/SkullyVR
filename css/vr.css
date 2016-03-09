@@ -6,7 +6,7 @@ p {
     position: absolute;
     z-index: 100;
     right: 6%;
-    bottom: 25%;
+    bottom: 24%;
     opacity: .6;
     z-index: 400;
     -moz-transform: scale(-1, 1);
@@ -20,7 +20,7 @@ p {
     position: absolute;
     z-index: 100;
     right: 56%;
-    bottom: 25%;
+    bottom: 24%;
     opacity: .6;
     z-index: 400;
     -moz-transform: scale(-1, 1);
@@ -74,7 +74,7 @@ p {
     position: absolute;
     height: 14px;
     width: 100px;
-    bottom: calc(25% + 46px);
+    bottom: calc(24% + 46px);
     z-index: 500;
     color: #fff;
     font-size: 8px;
@@ -223,11 +223,11 @@ p {
 /* ---------- hud tooltip ---------- */
 
 #hudTooltip {
-    bottom: calc(25% + 80px);
+    bottom: calc(24% + 80px);
     right: 6%;
 }
 
 #hudTooltipC {
-    bottom: calc(25% + 80px);
+    bottom: calc(24% + 80px);
     right: 56%;
 }
