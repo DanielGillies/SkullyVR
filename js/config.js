@@ -1,3 +1,3 @@
 var config = {
-    video: 'sxsw.mp4'
+    video: 'sxsw2.mp4'
 }
