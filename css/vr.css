@@ -6,7 +6,7 @@ p {
     position: absolute;
     z-index: 100;
     right: 6%;
-    bottom: 30%;
+    bottom: 25%;
     opacity: .6;
     z-index: 400;
     -moz-transform: scale(-1, 1);
@@ -20,7 +20,7 @@ p {
     position: absolute;
     z-index: 100;
     right: 56%;
-    bottom: 30%;
+    bottom: 25%;
     opacity: .6;
     z-index: 400;
     -moz-transform: scale(-1, 1);
@@ -74,7 +74,7 @@ p {
     position: absolute;
     height: 14px;
     width: 100px;
-    bottom: calc(30% + 46px);
+    bottom: calc(25% + 46px);
     z-index: 500;
     color: #fff;
     font-size: 8px;
@@ -126,7 +126,7 @@ p {
     position: absolute;
     font-size: 8px;
     bottom: 6px;
-    width: 140px;
+    width: 145px;
     left: 0;
     color: #ffffff;
     display: none;
@@ -223,11 +223,11 @@ p {
 /* ---------- hud tooltip ---------- */
 
 #hudTooltip {
-    bottom: calc(30% + 80px);
+    bottom: calc(25% + 80px);
     right: 6%;
 }
 
 #hudTooltipC {
-    bottom: calc(30% + 80px);
+    bottom: calc(25% + 80px);
     right: 56%;
 }
