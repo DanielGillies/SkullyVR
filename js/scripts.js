@@ -77,28 +77,20 @@ function speedChange() {
 
 function startTooltips() {
     setTimeout(function() {
-        $("#hudTooltip .diagonal").fadeIn(1000, function() {
-            $("#hudTooltip .horizontal").fadeIn(1000, function() {
-                $("#hudTooltip .tooltipText").fadeIn(1000);
-            })
+        $("#hudTooltip .tooltipDot").fadeIn(1000, function() {
+            $("#hudTooltip .tooltipText").fadeIn(1000);
         })
-        $("#hudTooltipC .diagonal").fadeIn(1000, function() {
-            $("#hudTooltipC .horizontal").fadeIn(1000, function() {
-                $("#hudTooltipC .tooltipText").fadeIn(1000);
-            })
+        $("#hudTooltipC .tooltipDot").fadeIn(1000, function() {
+            $("#hudTooltipC .tooltipText").fadeIn(1000);
         })
     }, 12000);
 
     setTimeout(function() {
-        $("#hudTooltip .tooltipText").fadeOut(500, function() {
-            $("#hudTooltip .horizontal").fadeOut(500, function() {
-                $("#hudTooltip .diagonal").fadeOut(500);
-            })
+        $("#hudTooltip .tooltipText").fadeOut(1000, function() {
+            $("#hudTooltip .tooltipDot").fadeOut(1000);
         })
-        $("#hudTooltipC .tooltipText").fadeOut(500, function() {
-            $("#hudTooltipC .horizontal").fadeOut(500, function() {
-                $("#hudTooltipC .diagonal").fadeOut(500);
-            })
+        $("#hudTooltipC .tooltipText").fadeOut(1000, function() {
+            $("#hudTooltipC .tooltipDot").fadeOut(1000);
         })
     }, 22000);
 }

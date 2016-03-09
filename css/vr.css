@@ -118,50 +118,114 @@ p {
     position: absolute;
 }
 
-.diagonal {
-    position: absolute;
-    height: 30px;
-    width: 40px;
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
-    bottom: 0;
-    right: 0;
-    display: none;
-}
-
-.horizontal {
-    position: absolute;
-    width: 80px;
-    height: 40px;
-    bottom: 9px;
-    left: 1px;
-    display: none;
-}
-
 .tooltipText {
-    background-color: rgba(0, 0, 0, .4);
+    font-family: 'Rajdhani';
+    background-color: rgba(0, 0, 0, .5);
     position: absolute;
     font-size: 8px;
-    bottom: 32px;
+    bottom: 6px;
     width: 150px;
     left: 0;
     color: #ffffff;
     display: none;
 }
 
+.tooltipDot {
+    display: none;
+    position: absolute;
+    bottom: 3px;
+    right: calc(8% + 50px);
+    background: #0000ff;
+}
+
+.pulse {
+    width: 10px;
+    height: 10px;
+    border: 5px solid rgba(0, 180, 255, 1);
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background-color: rgba(0, 180, 255, .5);
+    z-index: 10;
+    position: absolute;
+}
+
+.dot {
+    border: 10px solid rgba(0, 180, 255, 1);
+    background: transparent;
+    -webkit-border-radius: 60px;
+    -moz-border-radius: 60px;
+    border-radius: 60px;
+    height: 50px;
+    width: 50px;
+    -webkit-animation: pulse 2s ease-out;
+    -moz-animation: pulse 2s ease-out;
+    animation: pulse 2s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    z-index: 1;
+    opacity: 0;
+}
+
+@-moz-keyframes pulse {
+    0% {
+        -moz-transform: scale(0);
+        opacity: 0.0;
+    }
+    25% {
+        -moz-transform: scale(0);
+        opacity: 0.1;
+    }
+    50% {
+        -moz-transform: scale(0.1);
+        opacity: 0.3;
+    }
+    75% {
+        -moz-transform: scale(0.5);
+        opacity: 0.5;
+    }
+    100% {
+        -moz-transform: scale(1);
+        opacity: 0.0;
+    }
+}
+
+@-webkit-keyframes "pulse" {
+    0% {
+        -webkit-transform: scale(0);
+        opacity: 0.0;
+    }
+    25% {
+        -webkit-transform: scale(0);
+        opacity: 0.1;
+    }
+    50% {
+        -webkit-transform: scale(0.1);
+        opacity: 0.3;
+    }
+    75% {
+        -webkit-transform: scale(0.5);
+        opacity: 0.5;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        opacity: 0.0;
+    }
+}
+
 
 /* ---------- hud tooltip ---------- */
 
 #hudTooltip {
-    bottom: calc(19% + 38px);
-    right: calc(8% + 50px);
+    bottom: calc(19% + 80px);
+    right: 8%;
 }
 
 #hudTooltipC {
-    bottom: calc(19% + 38px);
-    right: calc(58% + 50px);
+    bottom: calc(19% + 80px);
+    right: 58%;
 }
