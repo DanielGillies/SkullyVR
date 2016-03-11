@@ -76,23 +76,28 @@ function speedChange() {
 }
 
 function startTooltips() {
-    setTimeout(function() {
-        $("#hudTooltip .tooltipDot").fadeIn(1000, function() {
-            $("#hudTooltip .tooltipText").fadeIn(1000);
-        })
-        $("#hudTooltipC .tooltipDot").fadeIn(1000, function() {
-            $("#hudTooltipC .tooltipText").fadeIn(1000);
-        })
-    }, 12000);
+    setTimeout(fadeInfoIn, 12000);
+    setTimeout(fadeInfoOut, 22000);
+    setTimeout(fadeInfoIn, 42000);
+    setTimeout(fadeInfoOut, 52000);
+}
 
-    setTimeout(function() {
-        $("#hudTooltip .tooltipText").fadeOut(1000, function() {
-            $("#hudTooltip .tooltipDot").fadeOut(1000);
-        })
-        $("#hudTooltipC .tooltipText").fadeOut(1000, function() {
-            $("#hudTooltipC .tooltipDot").fadeOut(1000);
-        })
-    }, 22000);
+function fadeInfoIn() {
+    $("#hudTooltip .tooltipDot").fadeIn(1000, function() {
+        $("#hudTooltip .tooltipText").fadeIn(1000);
+    })
+    $("#hudTooltipC .tooltipDot").fadeIn(1000, function() {
+        $("#hudTooltipC .tooltipText").fadeIn(1000);
+    })
+}
+
+function fadeInfoOut() {
+    $("#hudTooltip .tooltipText").fadeOut(1000, function() {
+        $("#hudTooltip .tooltipDot").fadeOut(1000);
+    })
+    $("#hudTooltipC .tooltipText").fadeOut(1000, function() {
+        $("#hudTooltipC .tooltipDot").fadeOut(1000);
+    })
 }
 
 function resetHUD() {
