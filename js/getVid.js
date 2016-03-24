@@ -1,5 +1,6 @@
 var elem1 = document.getElementById("positive");
 var elem2 = document.getElementById("negative");
+var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 var xhr = new XMLHttpRequest();
 xhr.open('GET', config.video, true);
 xhr.responseType = 'blob';
@@ -16,25 +17,29 @@ xhr.onload = function(e) {
         // video.play()
         document.getElementById("prompt").style.display = "inline";
 
-        // document.addEventListener("touchstart", function() {
-        //     document.getElementById("preloadBlocker").style.display = "none";
-        //     document.getElementById("prompt").style.display = "none";
+        // iOS device, use touchstart
+        if (iOS) {
+            document.addEventListener("touchstart", function() {
+                document.getElementById("preloadBlocker").style.display = "none";
+                document.getElementById("prompt").style.display = "none";
 
-        //     init();
-        //     initScripts()
-        //     animate();
-        //     document.removeEventListener("touchstart", arguments.callee, false);
-        // }, false)
+                init();
+                initScripts()
+                animate();
+                document.removeEventListener("touchstart", arguments.callee, false);
+            }, false)
+            // not iOS device, use click
+        } else {
+            document.addEventListener("click", function() {
+                document.getElementById("preloadBlocker").style.display = "none";
+                document.getElementById("prompt").style.display = "none";
 
-        document.addEventListener("click", function() {
-            document.getElementById("preloadBlocker").style.display = "none";
-            document.getElementById("prompt").style.display = "none";
-
-            init();
-            initScripts();
-            animate();
-            document.removeEventListener("click", arguments.callee, false);
-        }, false)
+                init();
+                initScripts();
+                animate();
+                document.removeEventListener("click", arguments.callee, false);
+            }, false)
+        }
     }
 }
 xhr.onprogress = function(e) {
