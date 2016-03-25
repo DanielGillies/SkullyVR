@@ -2,6 +2,12 @@ var elem1 = document.getElementById("positive");
 var elem2 = document.getElementById("negative");
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 if (true) {
+    var totalFrames = 1663;
+    var images = [];
+    for (var i = 0; i < totalFrames; i++) {
+        images[i] = new Image();
+        images[i].src = "frames/frame" + i + ".jpg";
+    }
 
 } else {
     var xhr = new XMLHttpRequest();
