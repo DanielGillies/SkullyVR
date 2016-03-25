@@ -56,7 +56,7 @@ function decreaseDistance() {
     temp = temp.toFixed(1);
     distanceElem.innerHTML = temp;
     distanceElem2.innerHTML = temp;
-    setTimeout(decreaseDistance, 6000);
+    setTimeout(decreaseDistance, 5000);
 }
 
 function speedChange() {
@@ -101,9 +101,9 @@ function fadeInfoOut() {
 }
 
 function resetHUD() {
-    distanceElem.innerHTML = "12.3";
+    distanceElem.innerHTML = "5.4";
     speedElem.innerHTML = "0";
-    distanceElem2.innerHTML = "12.3";
+    distanceElem2.innerHTML = "5.4";
     speedElem2.innerHTML = "0";
     document.getElementById("video").play();
     speedChange();
